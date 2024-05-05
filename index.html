@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+        } */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            background-color: black;
+            color: white;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        ul li{
+            list-style: none;
+            border: 2px solid #ffffff;
+            padding: 10px 30px;
+            margin-bottom: 5px;
+            box-shadow: 2PX 2px 15px  #ffffff;
+            cursor: pointer;
+            transition: all linear 0.5s 0.3s;
+        }
+
+        ul li:hover{
+            background-color: #ffffff;
+            color: black;
+            transform: rotate(360deg);
+        }
+
+        /* ul li ::after:hover{
+            content: "";
+            background-color: #ffffff;
+            color: black;
+            transform: rotate(360deg);
+        } */
+        .mylist{
+            margin-top: 35px;
+            font-size: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div>
+     <ul>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>Html</li>
+        <li>Python</li>
+    </ul>
+    <p class="mylist"></p>
+    </div>
+</body>
+
+    <script>
+        const ul=document.querySelector("ul");
+        const p1=document.querySelector("p");
+
+        const clickbutton=(e)=>{
+            console.log(event.target);
+            p1.innerHTML=` Favourite course is ${event.target.textContent}`;
+
+
+
+        }
+
+        ul.addEventListener("click",clickbutton);
+    </script>
+</html>
